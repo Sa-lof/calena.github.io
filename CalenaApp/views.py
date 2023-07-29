@@ -4,18 +4,18 @@ from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from django.db.models import Q
-
+from django.http import JsonResponse
+from django.db.models import Count
 
 # Create your views here.
 def home(request):
-      productos = Producto.objects.all()[6:12]
-      return render(request, 'CalenaApp/index.html', {'productos': productos})
+    productos = Producto.objects.all()[6:12]
+    productos_con_cantidad = get_productos_favoritos(request)
+    return render(request, 'CalenaApp/index.html', {'productos': productos, 'productos_con_cantidad': productos_con_cantidad})
 
 def nosotros(request):
-      return render(request, 'CalenaApp/nosotros.html')
-
-from django.http import JsonResponse
-from django.db.models import Count
+    productos_con_cantidad = get_productos_favoritos(request)
+    return render(request, 'CalenaApp/nosotros.html', {'productos_con_cantidad': productos_con_cantidad})
 
 def autocomplete(request):
     query = request.GET.get('query')
@@ -32,8 +32,8 @@ def autocomplete(request):
 
     return JsonResponse(resultados, safe=False)
 
-
 def catalogo(request):
+    productos_con_cantidad = get_productos_favoritos(request)
     query = request.GET.get('buscar')
     productos_catalogo = Producto.objects.all()
     categorias = Categoria.objects.all()
@@ -78,13 +78,15 @@ def catalogo(request):
 
     context['query_params'] = query_params
 
-    return render(request, 'CalenaApp/catalogo.html', {'page_obj': page_obj, **context})
+    return render(request, 'CalenaApp/catalogo.html', {'page_obj': page_obj, **context, 'productos_con_cantidad': productos_con_cantidad})
 
 def contacto(request):
-      return render(request, 'CalenaApp/contacto.html')
+    productos_con_cantidad = get_productos_favoritos(request)
+    return render(request, 'CalenaApp/contacto.html', {'productos_con_cantidad': productos_con_cantidad})
 
 def proveedores(request):
-      return render(request, 'CalenaApp/proveedores.html')
+    productos_con_cantidad = get_productos_favoritos(request)
+    return render(request, 'CalenaApp/proveedores.html', {'productos_con_cantidad': productos_con_cantidad})
 
 def agregar_favorito(request, id_producto):
     quantity = request.GET.get('quantity')
@@ -166,11 +168,16 @@ def actualizar_cantidad(request, id_producto):
     return response
 
 def producto(request, id_producto):
+    productos_con_cantidad = get_productos_favoritos(request)
     producto = get_object_or_404(Producto, id_producto=id_producto)
-    context = {'producto': producto}
+    context = {'producto': producto, 'productos_con_cantidad': productos_con_cantidad}
     return render(request, 'CalenaApp/producto.html', context)
 
 def cotizacion(request):
+    productos_con_cantidad = get_productos_favoritos(request)
+    return render(request, 'CalenaApp/cotizacion.html', {'productos_con_cantidad': productos_con_cantidad})
+
+def get_productos_favoritos(request):
     favoritos = request.COOKIES.get('favoritos', '').split(',')
     productos_favoritos = {}
     for fav in favoritos:
@@ -179,7 +186,6 @@ def cotizacion(request):
             id_producto, quantity = fav_parts
             productos_favoritos[int(id_producto)] = int(quantity)
     
-    # Obtener los productos con sus respectivas cantidades del diccionario
     productos_con_cantidad = []
     for producto_id, cantidad in productos_favoritos.items():
         try:
@@ -188,10 +194,11 @@ def cotizacion(request):
         except Producto.DoesNotExist:
             pass  # Manejar el caso en que el producto no exista, si es necesario
 
-    return render(request, 'CalenaApp/cotizacion.html', {'productos_con_cantidad': productos_con_cantidad})
+    return productos_con_cantidad
 
 def navbar(request):
-      return render(request, 'CalenaApp/navbar.html')
+      productos_con_cantidad = get_productos_favoritos(request)
+      return render(request, 'CalenaApp/navbar.html', {'productos_con_cantidad': productos_con_cantidad})
 
 def footer(request):
       return render(request, 'CalenaApp/footer.html')
