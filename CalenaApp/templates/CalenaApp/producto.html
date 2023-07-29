@@ -251,14 +251,9 @@
                                 
                                                   <script>
                                                     function agregarFavorito(idProducto) {
-                                                      var cantidad = document.getElementById('quantity-input-1').value;
-                                                      
                                                       $.ajax({
                                                         url: "{% url 'agregar_favorito' 0 %}".replace('0', idProducto),
                                                         type: 'GET',
-                                                        data: {
-                                                          'quantity': cantidad
-                                                        },
                                                         success: function(response) {
                                                           Toastify({
                                                             text: "Producto agregado al carrito",
@@ -269,6 +264,24 @@
                                                             backgroundColor: "green",
                                                             borderRadius: "10px",
                                                           }).showToast();
+                                                  
+                                                          // Actualizar el conteo de productos en el carrito después de agregar un producto
+                                                          actualizarConteoCarrito();
+                                                        },
+                                                        error: function(xhr, status, error) {
+                                                          console.error(error);
+                                                        }
+                                                      });
+                                                    }
+                                                  
+                                                    // Función para actualizar el conteo de productos en el carrito mediante AJAX
+                                                    function actualizarConteoCarrito() {
+                                                      $.ajax({
+                                                        url: "{% url 'obtener_conteo_carrito' %}",
+                                                        type: 'GET',
+                                                        success: function(response) {
+                                                          // Actualizar el valor del conteo de productos en el carrito en la barra de navegación
+                                                          $("#CartCount").text(response.productos_con_cantidad);
                                                         },
                                                         error: function(xhr, status, error) {
                                                           console.error(error);

@@ -14,6 +14,7 @@ urlpatterns = [
     path('actualizar_cantidad/<int:id_producto>/', views.actualizar_cantidad, name='actualizar_cantidad'),
     path('producto/<str:id_producto>/', views.producto, name='producto'),
     path("cotizacion.html", views.cotizacion, name="cotizacion"),
+    path('obtener-conteo-carrito/', views.obtener_conteo_carrito, name='obtener_conteo_carrito'),
     path("navbar.html", views.navbar, name="navbar"),
     path("footer.html", views.footer, name="footer"),
     path('autocomplete/', views.autocomplete, name='autocomplete'),

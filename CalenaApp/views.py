@@ -196,6 +196,11 @@ def get_productos_favoritos(request):
 
     return productos_con_cantidad
 
+def obtener_conteo_carrito(request):
+    productos_con_cantidad = get_productos_favoritos(request)
+    conteo_carrito = len(productos_con_cantidad)
+    return JsonResponse({'productos_con_cantidad': conteo_carrito})
+    
 def navbar(request):
       productos_con_cantidad = get_productos_favoritos(request)
       return render(request, 'CalenaApp/navbar.html', {'productos_con_cantidad': productos_con_cantidad})
