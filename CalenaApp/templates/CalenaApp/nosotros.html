@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Rodamientos Calena S.A. de C.V.</title>
+    <meta name="description" content="description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% load static %}
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'CalenaApp/images/logo.png' %}" />
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{% static 'CalenaApp/css/plugins.css' %}" />
+    <!-- Bootstap CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'CalenaApp/css/bootstrap.min.css' %}"
+    />
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'CalenaApp/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'CalenaApp/css/responsive.css' %}" />
+  </head>
+  <body class="template-index home11-grid">
+    <div id="pre-loader">
+      <img src="{% static 'CalenaApp/images/loader2.gif' %}" alt="Loading..." />
+    </div>
+    <div class="pageWrapper">
+      <!-- Start navbar section -->
+      {% include 'CalenaApp/navbar.html' %}
+      <!-- Ends navbar section -->
+
+      <!--Body Content-->
+      <div id="page-content">
+        <!--Feature Content-->
+        <div class="section feature-content" style="padding-bottom: 0px">
+          <div class="row" style="margin: 0 2rem 0 2rem">
+            <div
+              class="col-12 col-sm-12 col-md-7 col-lg-7"
+              style="border-radius: 8px"
+            >
+              <img
+                style="border-radius: 8px"
+                src="{% static 'CalenaApp/images/about-calena1.jpeg' %}"
+                alt="Fast Fashion Only available at BElle"
+                title="Fast Fashion Only available at BElle"
+              />
+            </div>
+            <div
+              class="col-12 col-sm-12 col-md-5 col-lg-5"
+              style="padding-top: 20px"
+            >
+              <style>
+                .h2indez {
+                  text-transform: none;
+                  font-size: 35px;
+                  color: #ef502e;
+                  font-weight: bold;
+                  font-family: "Open Sans", sans-serif !important;
+                  text-transform: none;
+                  margin-left: 20px;
+                }
+                .btnIP {
+                  background-color: transparent;
+                  color: #15374c;
+                  border: 2px solid #15374c;
+                  padding: 10px 20px;
+                  text-align: center;
+                  text-decoration: none;
+                  display: inline-block;
+                  font-size: 16px;
+                  margin: 4px 2px;
+                  cursor: pointer;
+                  border-radius: 10px;
+                  font-family: "Open Sans", sans-serif !important;
+                }
+
+                .btnIP:hover {
+                  background-color: #15374c;
+                  color: white;
+                  border: 2px solid #15374c;
+                  padding: 10px 20px;
+                  text-align: center;
+                  text-decoration: none;
+                  display: inline-block;
+                  font-size: 16px;
+                  margin: 4px 2px;
+                  cursor: pointer;
+                  border-radius: 10px;
+                }
+
+                .text_nos{
+              font-family: 'Open Sans', sans-serif !;
+              font-size: 15px;
+            }
+              </style>
+              <p class="h2indez">Sobre rodamientos calena</p>
+              <div
+                class="rte-setting featured-row__subtext"
+                style="font-family: 'Open Sans', sans-serif !important; margin: 20px"
+              >
+                <p class="text_nos">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book.
+                </p>
+                <p class="text_nos">
+                  The standard chunk of Lorem Ipsum used since the 1500s is
+                  reproduced below for those interested. Sections 1.10.32 and
+                  1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are
+                  also reproduced in their exact original form, accompanied by
+                  English versions from the 1914 translation by H. Rackham.
+                </p>
+              </div>
+              <a
+                href="catalogo.html"
+                class="btnIP"
+                style="margin: 20px; font-weight: bold"
+                >Ver Productos</a
+              >
+            </div>
+          </div>
+        </div>
+        <!--Feature Content-->
+
+        <div class="store-feature section">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="display-table store-info">
+                  <style>
+                    .circular-image {
+                      display: inline-block;
+                      overflow: hidden;
+                      border-radius: 50%;
+                      margin: 10px; /* Puedes ajustar el valor del margen según tus necesidades */
+                      width: 200px; /* Ajusta el ancho según tus necesidades */
+                      height: 200px; /* Ajusta la altura según tus necesidades */
+                    }
+                  </style>
+                  <li class="display-table-cell">
+                    <div class="circular-image">
+                      <img
+                        class="blur-up lazyload"
+                        data-src="{% static 'CalenaApp/images/Rectangle 17.png' %}"
+                        src="{% static 'CalenaApp/images/Rectangle 17.png' %}"
+                        alt="feature-row__image"
+                      />
+                    </div>
+                    <p class="h2indez section-header text-center">MISIÓN</p>
+                    <div class="rte-setting">
+                      <p class="text_nos">
+                        Lorem impsum Lorem impsum Lorem impsum Lorem impsum
+                        Lorem impsum Lorem impsum Lorem impsum
+                      </p>
+                    </div>
+                  </li>
+                  <li class="display-table-cell">
+                    <div class="circular-image">
+                      <img
+                        class="blur-up lazyload"
+                        data-src="{% static 'CalenaApp/images/Rectangle 17.png' %}"
+                        src="{% static 'CalenaApp/images/Rectangle 17.png' %}"
+                        alt="feature-row__image"
+                      />
+                    </div>
+                    <p class="h2indez section-header text-center">VISIÓN</p>
+                    <div class="rte-setting">
+                      <p class="text_nos">
+                        Lorem impsum Lorem impsum Lorem impsum Lorem impsum
+                        Lorem impsum Lorem impsum Lorem impsum
+                      </p>
+                    </div>
+                  </li>
+                  <li class="display-table-cell">
+                    <div class="circular-image">
+                      <img
+                        class="blur-up lazyload"
+                        data-src="{% static 'CalenaApp/images/Rectangle 17.png' %}"
+                        src="{% static 'CalenaApp/images/Rectangle 17.png' %}"
+                        alt="feature-row__image"
+                      />
+                    </div>
+                    <p class="h2indez section-header text-center">OBJETIVO</p>
+                    <div class="rte-setting">
+                      <p class="text_nos">
+                        Lorem impsum Lorem impsum Lorem impsum Lorem impsum
+                        Lorem impsum Lorem impsum Lorem impsum
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End Store Feature-->
+
+        <!--Best seller of the week-->
+        <div class="product-rows section">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div
+                  class="section-header text-center"
+                  style="padding-bottom: 20px"
+                >
+                  <p class="h2indez">
+                    ¿Por qué escoger a
+                    <img
+                      style="max-width: 10%"
+                      src="{% static 'CalenaApp/images/logo.png' %}"
+                      alt="logo"
+                      title="Calena logo"
+                    />
+                  </p>
+                </div>
+              </div>
+            </div>
+            <style>
+              .card-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #15374c;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+              }
+
+              .card:hover .card-overlay {
+                opacity: 1;
+              }
+
+              .card-overlay-text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                font-family: "Open Sans", sans-serif;
+              }
+
+              .card2 {
+                height: 350px;
+              }
+
+              .card-body2 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+              }
+
+              .card-title2 {
+                margin: 0;
+              }
+            </style>
+            <div class="grid-products">
+              <div class="row">
+                <div
+                  class="col-12 col-sm-6 col-md-6 col-lg-3 item grid-view-item style2"
+                >
+                  <div class="grid-view_image">
+                    <div class="card card2" style="border-radius: 15px">
+                      <img
+                        class="bg-img blur-up"
+                        src="{% static 'CalenaApp/images/image 1.png' %}"
+                        alt=""
+                      />
+                      <div
+                        class="card-body card-body2 text-center"
+                        style="border-radius: 15px"
+                      >
+                        <h2
+                          class="h2indez card-title2"
+                          style="color: white; font-size: 30px"
+                        >
+                          Experiencia comprobada
+                        </h2>
+                      </div>
+                      <div class="card-overlay" style="border-radius: 15px">
+                        <img
+                          src="{% static 'CalenaApp/images/image 1.png' %}"
+                          class="card-img-top"
+                          alt="Imagen"
+                        />
+                        <div class="card-body">
+                          <h5 class="card-title">
+                            <i class="bi bi-check-circle-fill" style="font-size: 30px"></i>
+                          </h5>
+                          <p
+                            class="card-text"
+                            style="color: white; font-size: 14px"
+                          >
+                            Con más de 33 años en el sector y 27 años como
+                            Rodamientos Calena, nuestra larga trayectoria nos ha
+                            permitido adquirir un profundo conocimiento del
+                            mercado y de las necesidades de nuestros clientes.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-12 col-sm-6 col-md-6 col-lg-3 item grid-view-item style2"
+                >
+                  <div class="grid-view_image">
+                    <div class="card card2" style="border-radius: 15px">
+                      <img
+                        class="bg-img blur-up"
+                        src="{% static 'CalenaApp/images/image 1.png' %}"
+                        alt=""
+                      />
+                      <div
+                        class="card-body card-body2 text-center"
+                        style="border-radius: 15px"
+                      >
+                        <h2
+                          class="h2indez card-title2"
+                          style="color: white; font-size: 30px"
+                        >
+                          Amplia gama de productos
+                        </h2>
+                      </div>
+                      <div class="card-overlay" style="border-radius: 15px">
+                        <img
+                          src="{% static 'CalenaApp/images/image 1.png' %}"
+                          class="card-img-top"
+                          alt="Imagen"
+                        />
+                        <div class="card-body">
+                          <h5 class="card-title">
+                            <i class="bi bi-check-circle-fill" style="font-size: 30px"></i>
+                          </h5>
+                          <p
+                            class="card-text"
+                            style="color: white; font-size: 14px"
+                          >
+                            Ofrecemos una amplia variedad de rodamientos,
+                            equipos de transmisión de potencia y productos para
+                            el mantenimiento. Esto nos permite ser un proveedor
+                            integral para nuestros clientes, ahorrándoles tiempo
+                            y esfuerzo en la búsqueda de productos.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-12 col-sm-6 col-md-6 col-lg-3 item grid-view-item style2"
+                >
+                  <div class="grid-view_image">
+                    <div class="card card2" style="border-radius: 15px">
+                      <img
+                        class="bg-img blur-up"
+                        src="{% static 'CalenaApp/images/image 1.png' %}"
+                        alt=""
+                      />
+                      <div
+                        class="card-body card-body2 text-center"
+                        style="border-radius: 15px"
+                      >
+                        <h2
+                          class="h2indez card-title2"
+                          style="color: white; font-size: 30px"
+                        >
+                          Calidad garantizada
+                        </h2>
+                      </div>
+                      <div class="card-overlay" style="border-radius: 15px">
+                        <img
+                          src="{% static 'CalenaApp/images/image 1.png' %}"
+                          class="card-img-top"
+                          alt="Imagen"
+                        />
+                        <div class="card-body">
+                          <h5 class="card-title">
+                            <i class="bi bi-check-circle-fill" style="font-size: 30px"></i>
+                          </h5>
+                          <p
+                            class="card-text"
+                            style="color: white; font-size: 14px"
+                          >
+                            Trabajamos con las mejores marcas del mercado para
+                            asegurar que todos nuestros productos cumplen con
+                            los más altos estándares de calidad. Nuestro
+                            compromiso con la calidad es inquebrantable.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-12 col-sm-6 col-md-6 col-lg-3 item grid-view-item style2"
+                >
+                  <div class="grid-view_image">
+                    <div class="card card2" style="border-radius: 15px">
+                      <img
+                        class="bg-img blur-up"
+                        src="{% static 'CalenaApp/images/image 1.png' %}"
+                        alt=""
+                      />
+                      <div
+                        class="card-body card-body2 text-center"
+                        style="border-radius: 15px"
+                      >
+                        <h2
+                          class="h2indez card-title2"
+                          style="color: white; font-size: 30px"
+                        >
+                          Servicio al cliente excepcional
+                        </h2>
+                      </div>
+                      <div class="card-overlay" style="border-radius: 15px">
+                        <img
+                          src="{% static 'CalenaApp/images/image 1.png' %}"
+                          class="card-img-top"
+                          alt="Imagen"
+                        />
+                        <div class="card-body">
+                          <h5 class="card-title">
+                            <i class="bi bi-check-circle-fill" style="font-size: 30px"></i>
+                          </h5>
+                          <p
+                            class="card-text"
+                            style="color: white; font-size: 14px"
+                          >
+                            Nos enorgullece ofrecer un servicio al cliente
+                            excepcional. Nuestro equipo está siempre dispuesto a
+                            ayudar a nuestros clientes, desde la selección del
+                            producto hasta su entrega y más allá.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Parallax Section-->
+        <div class="section">
+          <div class="hero hero--small hero__overlay" style="height: 200px">
+            <img
+              class="bg-img blur-up"
+              src="{% static 'CalenaApp/images/image 1.png' %}"
+              alt=""
+            />
+            <div class="hero__inner">
+              <div class="container-fluid">
+                <div class="text-center">
+                  <div class="row justify-content-center">
+                    <div class="col-md-4">
+                      <h2 class="counter" style="font-size: 50px; font-weight: 700;">0</h2>
+                      <p class="lead text_nos" style="color: white">Contador 1</p>
+                    </div>
+                    <div class="col-md-4">
+                      <h2 class="counter" style="font-size: 50px; font-weight: 700;">0</h2>
+                      <p class="lead text_nos" style="color: white">Contador 2</p>
+                    </div>
+                    <div class="col-md-4">
+                      <h2 class="counter" style="font-size: 50px; font-weight: 700;">0</h2>
+                      <p class="lead text_nos" style="color: white">Contador 3</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <script>
+                function animateValue(element, start, end, duration) {
+                  var range = end - start;
+                  var current = start;
+                  var increment = end > start ? 1 : -1;
+                  var stepTime = Math.abs(Math.floor(duration / range));
+                  var timer = setInterval(function () {
+                    current += increment;
+                    element.textContent = current;
+                    if (current == end) {
+                      clearInterval(timer);
+                    }
+                  }, stepTime);
+                }
+
+                window.addEventListener("DOMContentLoaded", function () {
+                  var counters = document.querySelectorAll(".counter");
+                  counters.forEach(function (counter, index) {
+                    var startValue = 0;
+                    var endValue = Math.pow(10, index + 1);
+                    var duration = 2000 + index * 500; // Ajustar la duración para cada contador
+
+                    animateValue(counter, startValue, endValue, duration);
+                  });
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+        <!--End Parallax Section-->
+
+        <div class="section custom-content-style1">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 pb-3">
+                <div class="section-header text-center">
+                  <p class="h2indez">Visítanos</p>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="section-header text-center">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.8477170727238!2d-99.12353862531467!3d19.33241324387379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce01e6cc5feecb%3A0x85513b46cea0fd81!2sRodamientos%20Calena%20S.A.%20de%20C.V!5e0!3m2!1ses!2smx!4v1688714026476!5m2!1ses!2smx"
+                    width="1000"
+                    height="500"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--End Body Content-->
+
+      <!-- Start navbar section -->
+      {% include 'CalenaApp/footer.html' %}
+      <!-- Ends navbar section -->
+
+      <!--Scoll Top-->
+      <span id="site-scroll"><i class="icon anm anm-angle-up-r"></i></span>
+      <!--End Scoll Top-->
+
+      <!-- Including Jquery -->
+      <script src="{% static 'CalenaApp/js/vendor/jquery-3.3.1.min.js' %}"></script>
+      <script src="{% static 'CalenaApp/js/vendor/modernizr-3.6.0.min.js' %}"></script>
+      <script src="{% static 'CalenaApp/js/vendor/query.cookie.js' %}"></script>
+      <script src="{% static 'CalenaApp/js/vendor/wow.min.js' %}"></script>
+      <!-- Including Javascript -->
+      <script src="{% static 'CalenaApp/js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'CalenaApp/js/plugins.js' %}"></script>
+      <script src="{% static 'CalenaApp/js/popper.min.js' %}"></script>
+      <script src="{% static 'CalenaApp/js/lazysizes.js' %}"></script>
+      <script src="{% static 'CalenaApp/js/main.js' %}"></script>
+
+    </div>
+  </body>
+
+</html>
