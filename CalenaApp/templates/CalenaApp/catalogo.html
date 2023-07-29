@@ -121,8 +121,13 @@
         <div id="page-content">
             <!--Collection Banner-->
             <div class="section" style="padding-top: 0px;">
-                <div class="hero hero--small hero__overlay bg-size">
-                    <img class="bg-img blur-up" src="{% static 'CalenaApp/images/image 5.png' %}" alt="" />
+                <div class="hero hero--small hero__overlay bg-size banner_cat">
+                    <style>
+                        .banner_cat{
+                          background-image: url("{% static 'CalenaApp/images/image 5.png' %}");
+                          background-repeat: no-repeat !important; 
+                        }
+                      </style>
                     <div class="hero__inner">
                         <div class="container">
                             <div class="wrap-text center text-small font-regular">       

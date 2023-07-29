@@ -496,13 +496,13 @@
 
       <!--Parallax Section-->
       <div class="section">
-        <div class="hero hero--small hero__overlay bg-size">
-          <style></style>
-          <img
-            class="bg-img blur-up"
-            src="{% static 'CalenaApp/images/Group 1.png' %}"
-            alt=""
-          />
+        <div class="hero hero--small hero__overlay bg-size banner_desc">
+          <style>
+            .banner_desc{
+              background-image: url("{% static 'CalenaApp/images/Group 1.png' %}");
+              background-repeat: no-repeat !important; 
+            }
+          </style>
           <div class="hero__inner">
             <div class="container">
               <style>
