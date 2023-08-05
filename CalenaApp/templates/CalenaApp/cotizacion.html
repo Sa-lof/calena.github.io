@@ -80,7 +80,7 @@
                             </div>
                             <div class="row align-items-center pb-5">
                                 <div class="container">
-                                    <form>
+                                    <form method="post" id="formulario">
                                         <!-- Primera fila con tres columnas -->
                                         <div class="row">
                                             <div class="col-md-4 mb-3">
@@ -98,15 +98,35 @@
                                         </div>
                                 
                                         <!-- Segunda fila con dos columnas -->
-                                        <div class="row">
+                                        <div>
                                             <div class="col-md-8 mb-3">
                                                 <label for="inputEmail">Email</label>
                                                 <input type="email" class="form-control" id="inputEmail" placeholder="Ingresa tu email" required>
                                             </div>
                                             <div class="col-md-4 mb-3 pt-4">
-                                                <input id="delete-cookies-btn" type="submit" style="background-color: #15374C; color: white; border-radius: 8px;font-weight:bold;
-                                font-family: 'Open Sans', sans-serif;" id="cartCheckout" class="btn" value="ENVIAR">
+                                                <input type="button" onclick="sendEmailContac()" id="delete-cookies-btn" type="submit" style="background-color: #15374C; color: white; border-radius: 8px;font-weight:bold;
+                                            font-family: 'Open Sans', sans-serif;" id="cartCheckout" class="btn" value="ENVIAR">
                                             </div>
+
+                                            <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header d-flex justify-content-center">
+                                                            <img style="max-width: 26%;" src="{% static 'CalenaApp/images/logo.png' %}" alt="Calena" title="Calena" />
+                                                        </div>
+                                                        <div class="modal-body text-center">
+                                                            <p class="h2indez">Cotización enviada con éxito</p>
+                                                            <p>Gracias por dejarnos ser tu opción de proveedor de confianza.</p>
+                                                            <p style="font-weight: bold;">Recibirás pronta respuesta a tu cotización vía correo electrónico.</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                                <a href="{% url 'carrito' %}" class="btn btn-primary w-100" style="background-color: #15374C; color: white; border-radius: 8px;font-weight:bold;
+                                                                font-family: 'Open Sans', sans-serif;">CERRAR</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                             <script>
                                                 // Function to delete the 'favoritos' cookie
                                                 function deleteFavoritosCookie() {
@@ -121,6 +141,94 @@
                                         <!-- Botón de envío del formulario -->
                                         
                                     </form>
+                                    <script src="https://smtpjs.com/v3/smtp.js"></script>
+                                    <script>
+                                        function sendEmailContac() {
+                                            // Obtener los valores de los campos del formulario
+                                            const nombre = document.getElementById("inputNombre").value;
+                                            const apellido = document.getElementById("inputApellido").value;
+                                            const telefono = document.getElementById("inputTelefono").value;
+                                            const email = document.getElementById("inputEmail").value;
+                                            
+                                            // Estilos CSS en línea
+                                            const style = `
+                                                padding: 20px;
+                                                border: 1px solid #ccc;
+                                                border-radius: 8px;
+                                                background-color: #f0f0f0;
+                                                font-family: Arial, sans-serif;
+                                                background-color: #15374C;
+                                                color: white;
+                                            `
+                                            const thstyle = `
+                                                background-color: #EF502E;
+                                                color: white;
+                                                font-weight: bold;
+                                                padding: 8px;
+                                                text-align: left;
+                                            `
+
+                                            const tdstyle = `
+                                                border: 1px solid #ccc;
+                                                padding: 8px;
+                                            `
+
+                                            const btnstyle = `
+                                                display: inline-block;
+                                                background-color: #EF502E;
+                                                color: white;
+                                                padding: 8px 16px;
+                                                text-decoration: none;
+                                                border-radius: 4px;
+                                                margin-top: 20px;
+                                            `
+
+                                            Email.send({
+                                                SecureToken: "bb69b76e-6d29-469f-a5f0-a1e0686dab93",
+                                                To: 'info@calena.com.mx',
+                                                From: "calenaoficial@outlook.com",
+                                                Subject: "Pedido Nuevo",
+                                                Body: `
+                                                    <div style="${style}">
+                                                        <h1 style="color: #EF502E;">Nueva cotización</h1>
+                                                        <h2>Datos del cliente</h2>
+                                                        <p><strong>Nombre:</strong> ${nombre} ${apellido}</p>
+                                                        <p><strong>Teléfono:</strong> ${telefono}</p>
+                                                        <p><strong>Email:</strong> ${email}</p>
+                                                    </div>
+
+                                                    <div>
+                                                        <h2>Resumen del pedido</h2>
+                                                        <table style=" width: 100%; border-collapse: collapse;">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="${thstyle}">Nombre del Producto</th>
+                                                                    <th style="${thstyle}">Código</th>
+                                                                    <th style="${thstyle}">Cantidad</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {% for item in productos_con_cantidad %}
+                                                                    <tr>
+                                                                        <td style="${tdstyle}">{{ item.producto.titulo_producto }}</td>
+                                                                        <td style="${tdstyle}">{{ item.producto.codigo_producto }}</td>
+                                                                        <td style="${tdstyle}">x{{ item.cantidad }}</td>
+                                                                    </tr>
+                                                                {% endfor %}
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <a style="${btnstyle}" href="mailto:sof.db@outlook.com?subject=Respuesta%20cotización%20-%20${nombre}%20${apellido}&body=Estimado%20Cliente,%0D%0A%0D%0ALe%20hacemos%20llegar%20el%20total%20de%20la%20cotización%20del%20siguiente%20pedido:%0D%0A%0D%0A{% for item in productos_con_cantidad %}%0D%0A{{ item.producto.titulo_producto }}%20x{{ item.cantidad }}%0D%0A{% endfor %}%0D%0A%0D%0A%0D%0ATotal: %0D%0AAtentamente,%0D%0ACALENA%0D%0A%0D%0A">Responder cotización</a>
+                                                `
+                                            }).then(message => {
+                                                // Instead of alert, show the email content in the modal
+                                                var modalBody = document.querySelector('.modal-body');
+                                                
+                                                $('#emailModal').modal('show'); // Show the modal
+                                            });
+                                        }
+                                    </script>
+
                                 </div>
                                 
                             </div>
