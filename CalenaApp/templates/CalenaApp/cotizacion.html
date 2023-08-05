@@ -218,7 +218,7 @@
                                                             </tbody>
                                                         </table>
                                                     </div>
-                                                    <a style="${btnstyle}" href="mailto:sof.db@outlook.com?subject=Respuesta%20cotización%20-%20${nombre}%20${apellido}&body=Estimado%20Cliente,%0D%0A%0D%0ALe%20hacemos%20llegar%20el%20total%20de%20la%20cotización%20del%20siguiente%20pedido:%0D%0A%0D%0A{% for item in productos_con_cantidad %}%0D%0A{{ item.producto.titulo_producto }}%20x{{ item.cantidad }}%0D%0A{% endfor %}%0D%0A%0D%0A%0D%0ATotal: %0D%0AAtentamente,%0D%0ACALENA%0D%0A%0D%0A">Responder cotización</a>
+                                                    <a style="${btnstyle}" href="mailto:${email}?subject=Respuesta%20cotización%20-%20${nombre}%20${apellido}&body=Estimado%20Cliente,%0D%0A%0D%0ALe%20hacemos%20llegar%20el%20total%20de%20la%20cotización%20del%20siguiente%20pedido:%0D%0A%0D%0A{% for item in productos_con_cantidad %}%0D%0A{{ item.producto.titulo_producto }}%20x{{ item.cantidad }}%0D%0A{% endfor %}%0D%0A%0D%0A%0D%0ATotal: %0D%0AAtentamente,%0D%0ACALENA%0D%0A%0D%0A">Responder cotización</a>
                                                 `
                                             }).then(message => {
                                                 // Instead of alert, show the email content in the modal

@@ -101,7 +101,8 @@
                 	<h2 class="h2indez3">CONECTA CON NOSOTROS</h2>
                   <p class="title_index">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </p>
                 	<div class="formFeilds contact-form form-vertical">
-                    <form action="http://annimexweb.com/items/belle/assets/php/mail.php" method="post"  id="contact_form" class="contact-form">	
+                    <form method="post" id="contact_form" class="contact-form">	
+                      {% csrf_token %}
                       <div class="row">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                         	<div class="form-group">
@@ -110,14 +111,14 @@
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                         	<div class="form-group">
-							              <input style="border-radius: 8px;" type="email" id="ContactFormEmail" name="email" placeholder="Apellido" value="" required="">                        	
+							              <input style="border-radius: 8px;" type="text" id="ContactFormApellido" name="apellido" placeholder="Apellido" value="" required="">                        	
                           </div>
                         </div>
                       </div>
                       <div class="row">
                           <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                           	<div class="form-group">
-                            <input style="border-radius: 8px;" required="" type="tel" id="ContactFormPhone" name="phone" pattern="[0-9\-]*" placeholder="Correo" value="">
+                            <input style="border-radius: 8px;" required="" type="email" id="ContactFormCorreo" name="email" placeholder="Correo" value="">
                             </div>
                           </div>
                       </div>
@@ -145,10 +146,97 @@
                                                   }
                       </style>
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                            <input type="submit" class="btnaboutus" value="ENVIAR">
+                            <input type="submit" type="button" onclick="sendEmailContacForm()" class="btnaboutus" value="ENVIAR">
                         </div>
                      </div>
                     </form>
+                    <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content">s
+                              <div class="modal-header d-flex justify-content-center">
+                                  <img style="max-width: 26%;" src="{% static 'CalenaApp/images/logo.png' %}" alt="Calena" title="Calena" />
+                              </div>
+                              <div class="modal-body text-center">
+                                  <p class="h2indez">Mensaje enviado con éxito</p>
+                                  <p>Gracias por ponerte en contacto con nosotros.</p>
+                                  <p style="font-weight: bold;">Recibirás pronta respuesta vía correo electrónico.</p>
+                              </div>
+                              <div class="modal-footer">
+                                      <a href="{% url 'contacto' %}" class="btn btn-primary w-100" style="background-color: #15374C; color: white; border-radius: 8px;font-weight:bold;
+                                      font-family: 'Open Sans', sans-serif;">CERRAR</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                    <script src="https://smtpjs.com/v3/smtp.js"></script>
+                                    <script>
+                                        function sendEmailContacForm() {
+                                            event.preventDefault();
+                                            // Obtener los valores de los campos del formulario
+                                            const nombre = document.getElementById("ContactFormName").value;
+                                            const apellido = document.getElementById("ContactFormApellido").value;
+                                            const mensaje = document.getElementById("ContactFormMessage").value;
+                                            const email = document.getElementById("ContactFormCorreo").value;
+                                            
+                                            // Estilos CSS en línea
+                                            const style = `
+                                                padding: 20px;
+                                                border: 1px solid #ccc;
+                                                border-radius: 8px;
+                                                background-color: #f0f0f0;
+                                                font-family: Arial, sans-serif;
+                                                background-color: #15374C;
+                                                color: white;
+                                            `
+                                            const thstyle = `
+                                                background-color: #EF502E;
+                                                color: white;
+                                                font-weight: bold;
+                                                padding: 8px;
+                                                text-align: left;
+                                            `
+
+                                            const tdstyle = `
+                                                border: 1px solid #ccc;
+                                                padding: 8px;
+                                            `
+
+                                            const btnstyle = `
+                                                display: inline-block;
+                                                background-color: #EF502E;
+                                                color: white;
+                                                padding: 8px 16px;
+                                                text-decoration: none;
+                                                border-radius: 4px;
+                                                margin-top: 20px;
+                                            `
+
+                                            Email.send({
+                                                SecureToken: "bb69b76e-6d29-469f-a5f0-a1e0686dab93",
+                                                To: 'info@rcalena.com.mx',
+                                                From: "calenaoficial@outlook.com",
+                                                Subject: "Contacto",
+                                                Body: `
+                                                    <div style="${style}">
+                                                        <h1 style="color: #EF502E;">Nuevo contacto</h1>
+                                                        <h2>Datos del cliente</h2>
+                                                        <p><strong>Nombre:</strong> ${nombre} ${apellido}</p>
+                                                        <p><strong>Email:</strong> ${email}</p>
+                                                        <p><strong>Mensaje:</strong> ${mensaje}</p>
+                                                    </div>
+                                                    <a style="${btnstyle}" href="mailto:${email}?subject=Respuesta%20contacto%20-%20${nombre}%20${apellido}&body=Estimado%20Cliente,%0D%0A%0D%0ANos%20ponemos%20en%20contacto%20con%20usted%20debido%20al%20siguiente%20mensaje%20recibido:%0D%0A%0D%0A${mensaje}%0D%0A%0D%0AAtentamente,%0D%0ACALENA%0D%0A%0D%0A">Responder contacto</a>
+                                                `
+                                            }).then(message => {
+                                                var modalBody = document.querySelector('.modal-body');
+                                                $('#emailModal').modal('show');
+                                                document.getElementById("ContactFormName").value = "";
+                                                document.getElementById("ContactFormApellido").value = "";
+                                                document.getElementById("ContactFormMessage").value = "";
+                                                document.getElementById("ContactFormCorreo").value = "";
+                                            });
+                                        }
+                                    </script>
+
                   </div>
               </div>
         </div>
