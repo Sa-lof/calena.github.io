@@ -251,9 +251,13 @@
                                 
                                                   <script>
                                                     function agregarFavorito(idProducto) {
+                                                        var cantidad = document.getElementById('quantity-input-1').value;
                                                       $.ajax({
                                                         url: "{% url 'agregar_favorito' 0 %}".replace('0', idProducto),
                                                         type: 'GET',
+                                                        data: {
+                                                          'quantity': cantidad
+                                                        },
                                                         success: function(response) {
                                                           Toastify({
                                                             text: "Producto agregado al carrito",
