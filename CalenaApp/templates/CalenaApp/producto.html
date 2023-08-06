@@ -30,56 +30,120 @@
         <div id="page-content" style="padding-top: 30px;">
             <!--MainContent-->
             <div id="MainContent" class="main-content" role="main">
-                
                 <div id="ProductSection-product-template" class="product-template__container prstyle1 container">
                     <!--product-single-->
                     <div class="product-single">
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="product-details-img">
-                                    <div class="product-thumb">
-                                        <div id="gallery" class="product-dec-slider-2 product-tab-left">
-                                            <a data-image="{% static 'CalenaApp/images/Rectangle 16.png' %}" data-zoom-image="{% static 'CalenaApp/images/Rectangle 16.png' %}" class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" tabindex="-1">
-                                                <img class="blur-up lazyload" src="{% static 'CalenaApp/images/Rectangle 16.png' %}" alt="" />
-                                            </a>
-                                            <a data-image="{% static 'CalenaApp/images/Rectangle 16.png' %}" data-zoom-image="{% static 'CalenaApp/images/Rectangle 16.png' %}" class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" tabindex="-1">
-                                                <img class="blur-up lazyload" src="{% static 'CalenaApp/images/Rectangle 16.png' %}" alt="" />
-                                            </a>
-                                            <a data-image="{% static 'CalenaApp/images/Rectangle 16.png' %}" data-zoom-image="{% static 'CalenaApp/images/Rectangle 16.png' %}" class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" tabindex="-1">
-                                                <img class="blur-up lazyload" src="{% static 'CalenaApp/images/Rectangle 16.png' %}" alt="" />
-                                            </a>
-                                            <a data-image="{% static 'CalenaApp/images/Rectangle 16.png' %}" data-zoom-image="{% static 'CalenaApp/images/Rectangle 16.png' %}" class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1">
-                                                <img class="blur-up lazyload" src="{% static 'CalenaApp/images/Rectangle 16.png' %}" alt="" />
-                                            </a>
-                                            <a data-image="{% static 'CalenaApp/images/Rectangle 16.png' %}" data-zoom-image="{% static 'CalenaApp/images/Rectangle 16.png' %}" class="slick-slide slick-cloned" data-slick-index="0" aria-hidden="true" tabindex="-1">
-                                                <img class="blur-up lazyload" src="{% static 'CalenaApp/images/Rectangle 16.png' %}" alt="" />
-                                            </a>
-                                            <a data-image="{% static 'CalenaApp/images/Rectangle 16.png' %}" data-zoom-image="{% static 'CalenaApp/images/Rectangle 16.png' %}" class="slick-slide slick-cloned" data-slick-index="1" aria-hidden="true" tabindex="-1">
-                                                <img class="blur-up lazyload" src="{% static 'CalenaApp/images/Rectangle 16.png' %}" alt="" />
-                                            </a>
-                                            <a data-image="{% static 'CalenaApp/images/Rectangle 16.png' %}" data-zoom-image="{% static 'CalenaApp/images/Rectangle 16.png' %}" class="slick-slide slick-cloned" data-slick-index="2" aria-hidden="true" tabindex="-1">
-                                                <img class="blur-up lazyload" src="{% static 'CalenaApp/images/Rectangle 16.png' %}" alt="" />
-                                            </a>
-                                        </div>
+                            <style>
+                                .main-image {
+                                  max-width: 100%;
+                                  height: 300px; /* Ajusta la altura según tus necesidades */
+                                  overflow: hidden;
+                                }
+                                
+                              
+                                @media (max-width: 768px) {
+                                  .main-image {
+                                    max-width: 100%;
+                                        height: 300px; /* Ajusta la altura según tus necesidades */
+                                        overflow: hidden;
+                                  }
+                                }
+
+                                @media (max-width: 991px) {
+                                  .main-image {
+                                    max-width: 100%;
+                                        height: 300px; /* Ajusta la altura según tus necesidades */
+                                        overflow: hidden;
+                                  }
+                                }
+                              
+                                @media (max-width: 576px) {
+                                  .main-image {
+                                    max-width: 100%;
+                                        height: 200px; /* Ajusta la altura según tus necesidades */
+                                        overflow: hidden;
+                                  }
+                                }
+                              
+                                .main-image img {
+                                  width: 100%;
+                                  height: 100%;
+                                  object-fit: cover;
+                                }
+                              
+                                .thumbnails img {
+                                  width: 100%;
+                                  height: 100%;
+                                  object-fit: cover;
+                                  cursor: pointer; /* Cambia el cursor al pasar sobre las miniaturas */
+                                  transition: opacity 0.3s ease; /* Agrega una transición suave */
+                                }
+                              
+                                .thumbnails img:hover {
+                                  opacity: 0.7; /* Reduce la opacidad al pasar sobre las miniaturas */
+                                }
+                            </style>
+                              
+                            <div class="col-lg-5 col-md-5 col-sm-8 col-8 pr-5">
+                                <div class="ecommerce-gallery gallery">
+                                  <div class="row py-3 shadow-5">
+                                    <div class="col-12 mb-1 main-image">
+                                        <img
+                                        class="ecommerce-gallery-main-img active w-100"
+                                        src="{% static 'CalenaApp/images/Rectangle 16.png' %}"
+                                        alt="Imagen 1"
+                                        class="thumbnail"
+                                        id="mainImage"
+                                      />
                                     </div>
-                                    <div class="zoompro-wrap product-zoom-right pl-20">
-                                        <div class="zoompro-span">
-                                            <img class="zoompro blur-up lazyload" data-zoom-image="{% static 'CalenaApp/images/Rectangle 16.png' %}" alt="" src="{% static 'CalenaApp/images/Rectangle 16.png' %}" />
-                                        </div>
+                                    <div class="col-3 mt-1 thumbnails">
+                                      <img
+                                        class="w-100 h-100 thumbnail"
+                                        src="{% static 'CalenaApp/images/Rectangle 16.png' %}"
+                                        alt="Imagen 1"
+                                        onclick="changeMainImage(this)"
+                                      />
                                     </div>
-                                    <div class="lightboximages">
-                                        <a href="{% static 'CalenaApp/images/Rectangle 16.png' %}" data-size="1462x2048"></a>
-                                        <a href="{% static 'CalenaApp/images/Rectangle 16.png' %}" data-size="1462x2048"></a>
-                                        <a href="{% static 'CalenaApp/images/Rectangle 16.png' %}" data-size="1462x2048"></a>
-                                        <a href="{% static 'CalenaApp/images/Rectangle 16.png' %}" data-size="1462x2048"></a>
-                                        <a href="{% static 'CalenaApp/images/Rectangle 16.png' %}" data-size="1462x2048"></a>
-                                        <a href="{% static 'CalenaApp/images/Rectangle 16.png' %}" data-size="1462x2048"></a>
-                                        <a href="{% static 'CalenaApp/images/Rectangle 16.png' %}" data-size="731x1024"></a>
+                                    <div class="col-3 mt-1 thumbnails">
+                                      <img
+                                        class="w-100 h-100 thumbnail"
+                                        src="{% static 'CalenaApp/images/Rectangle 7.png' %}"
+                                        alt="Imagen 1"
+                                        onclick="changeMainImage(this)"
+                                      />
                                     </div>
-        
+                                    <div class="col-3 mt-1 thumbnails">
+                                      <img
+                                        class="w-100 h-100 thumbnail"
+                                        src="{% static 'CalenaApp/images/Rectangle 16.png' %}"
+                                        alt="Imagen 1"
+                                        onclick="changeMainImage(this)"
+                                      />
+                                    </div>
+                                    <div class="col-3 mt-1 thumbnails">
+                                      <img
+                                        class="w-100 h-100 thumbnail"
+                                        src="{% static 'CalenaApp/images/Rectangle 7.png' %}"
+                                        alt="Imagen 1"
+                                        onclick="changeMainImage(this)"
+                                      />
+                                    </div>
+                                  </div>
                                 </div>
+                              
+                                <script>
+                                  function changeMainImage(clickedImage) {
+                                    const mainImage = document.getElementById('mainImage');
+                                    mainImage.src = clickedImage.src;
+                                    mainImage.alt = clickedImage.alt;
+                                  }
+                                </script>
                             </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                              
+                              
+                              
+                            <div class="col-lg-7 col-md-7 col-sm-12 col-12">
                                     <div class="product-single__meta">
                                         <style>
                                             .h2indezpro{
@@ -144,17 +208,23 @@
                                                 </div>
                                                         <style>
                                                             .quantity {
-                                                                box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-                                                                border-radius: 10px;
-                                                                width: 110px;
+                                                            max-width: 200px; /* Establece un ancho máximo */
+                                                            margin: 0 auto; /* Centra horizontalmente */
+                                                            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+                                                            border-radius: 10px;
                                                             }
-
-                                                            @media (max-width: 576px) {
-                                                                .quantity {
-                                                                box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-                                                                border-radius: 10px;
-                                                                width: 40px !important;
+                                                            .input-group {
+                                                            width: 100%; /* Ocupa todo el ancho disponible */
                                                             }
+                                                            .form-control {
+                                                            width: 100%; /* Ocupa todo el ancho disponible */
+                                                            max-width: 100px; /* Ancho máximo para evitar que se estire demasiado */
+                                                            margin: 0 auto; /* Centra horizontalmente */
+                                                            }
+                                                            .input-group-prepend,
+                                                            .input-group-append {
+                                                            display: flex;
+                                                            align-items: center;
                                                             }
                     
                                                             .quantity button:focus {
