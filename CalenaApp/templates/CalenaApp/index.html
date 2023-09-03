@@ -36,57 +36,114 @@
   <div class="home-slideshow">
     <div class="slide">
       <div class="blur-up lazyload">
-        <img
-          class="blur-up lazyload"
-          data-src="{% static 'CalenaApp/images/Group 2.png' %}"
-          src="{% static 'CalenaApp/images/Group 2.png' %}"
-          alt="Summer Bikini Collection"
-          title="Summer Bikini Collection"
-        />
-        <div class="slideshow__text-wrap slideshow__overlay classic middle">
-          <div class="slideshow__text-content middle">
-            <div class="wrap-caption left">
-              <h2 class="h1 title_index slideshow__title">
-                Rodamientos Calena S.A. de C.V.
-              </h2>
-              <span class="mega-subtitle slideshow__subtitle">
-                Lorem impsum Lorem impsum Lorem impsum
-              </span>
+        <div class="section" style="padding-top: 0px;">
+          <div class="hero hero--small hero__overlay bg-size banner_cat">
               <style>
-                .btnIP2 {
-                  background-color: transparent;
-                  color: white;
-                  border: 2px solid white;
-                  padding: 10px 20px;
-                  text-align: center;
-                  text-decoration: none;
-                  display: inline-block;
-                  font-size: 20px;
-                  margin: 4px 2px;
-                  cursor: pointer;
-                  border-radius: 8px;
-                  width: 250px;
-                  font-weight: bold;
-                }
+                  .banner_cat{
+                    background-image: url("{% static 'CalenaApp/images/Group 2.png' %}");
+                    background-repeat: no-repeat !important; 
+                  }
+                </style>
+              <div class="hero__inner">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <style>
+                              body {
+                                  margin: 0;
+                                  padding: 0;
+                                  overflow-x: hidden; /* Prevent horizontal scrolling */
+                              }
+                              .h2indez{
+                              text-transform: none;
+                              font-size: 35px;
+                              color: #EF502E;
+                              font-weight:bold;
+                              font-family: 'Open Sans', sans-serif;
+                          }
 
-                /* Responsive Styles */
-                @media (max-width: 768px) {
-                  .title_index{
-                    font-size: 30px !important; /* Increase the font size for smaller screens */
-                  }
-                  .mega-subtitle {
-                    font-size: 20px; /* Increase the font size for smaller screens */
-                  }
-                  .btnIP2 {
-                    width: 200px;
-                    font-size: 15px; /* Increase the font size for smaller screens */
-                  }
-                }
-              </style>
-              <a href="catalogo.html" class="btnIP2">Cotizar ahora</a>
-            </div>
+                          .prov{
+                              text-transform: none;
+                              font-size: 20px;
+                              color: white;
+                              font-family: 'Open Sans', sans-serif;
+                          }
+                          </style>
+                          <h2 class="h1 title_index slideshow__title">
+                            Rodamientos Calena S.A. de C.V.
+                          </h2>
+                          <span class="mega-subtitle slideshow__subtitle">
+                            Tu proveedor de confianza de suministros
+                          </span>
+                          <style>
+                            .btnIP2 {
+                              background-color: transparent;
+                              color: white;
+                              border: 2px solid white;
+                              padding: 10px 20px;
+                              text-align: center;
+                              text-decoration: none;
+                              display: inline-block;
+                              font-size: 20px;
+                              margin: 4px 2px;
+                              cursor: pointer;
+                              border-radius: 8px;
+                              width: 250px;
+                              font-weight: bold;
+                            }
+            
+                            /* Responsive Styles */
+                            @media (max-width: 768px) {
+                              .title_index{
+                                font-size: 25px !important; /* Increase the font size for smaller screens */
+                              }
+                              .mega-subtitle {
+                                font-size: 20px; /* Increase the font size for smaller screens */
+                              }
+                              .btnIP2 {
+                                width: 200px;
+                                font-size: 15px; /* Increase the font size for smaller screens */
+                              }
+                            }
+                          </style>
+                          <a href="catalogo.html" class="btnIP2">Cotizar ahora</a>
+                      </div>
+                      <div class="col-md-3 col-6 pt-4">
+                        <div class="card text-center" style="border-radius: 8px; background-color: transparent;">
+                          <a href="https://api.whatsapp.com/send?phone=5215627585157" style="text-decoration: none; color: inherit;">
+                            <div class="card-body">
+                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+                                <style>
+                                    .h2indez2 {
+                                        text-transform: none;
+                                        font-size: 25px;
+                                        color: white;
+                                        font-weight: bold;
+                                        font-family: 'Open Sans', sans-serif !important;
+                                        text-transform: none;
+                                    }
+                                </style>
+                                <i class="fab fa-whatsapp fa-3x" style="color:#EF502E;"></i>
+                                <h5 class="card-title h2indez2">WhatsApp</h5>
+                                <p class="card-text" style="font-size: 16px; font-family: 'Open Sans', sans-serif; color: white;">+52 56 2758 5157</p>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-6 pt-4">
+                        <div class="card text-center" style="border-radius: 8px; background-color: transparent;">
+                          <a href="mailto:info@rcalena.com.mx" style="text-decoration: none; color: inherit;">
+                            <div class="card-body">
+                                <i class="fas fa-envelope fa-3x" style="color:#EF502E;"></i>
+                                <h5 class="card-title h2indez2">Correo</h5>
+                                <p class="card-text" style="font-size: 16px; font-family: 'Open Sans', sans-serif; color: white;">info@rcalena.com.mx</p>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
+      </div>
       </div>
     </div>
   </div>
@@ -166,7 +223,7 @@
                         font-size: 15px;
                       "
                     >
-                      Lorem impsum Lorem impsum Lorem impsum
+                    Ofrecemos una amplia variedad de rodamientos y equipos. 
                     </div>
                   </div>
                   <div
@@ -185,7 +242,7 @@
                         font-size: 15px;
                       "
                     >
-                      Lorem impsum Lorem impsum Lorem impsum
+                      Trabajamos con las mejores marcas del mercado 
                     </div>
                   </div>
                   <div
@@ -204,7 +261,7 @@
                         font-size: 15px;
                       "
                     >
-                      Lorem impsum Lorem impsum Lorem impsum
+                    Con más de 33 años en el sector y 27 años como Rodamientos Calena
                     </div>
                   </div>
                 </div>
