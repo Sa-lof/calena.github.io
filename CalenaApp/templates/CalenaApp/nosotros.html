@@ -99,18 +99,10 @@
                 style="font-family: 'Open Sans', sans-serif !important; margin: 20px"
               >
                 <p class="text_nos">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
+                  En Rodamientos Calena, la satisfacción del cliente es nuestra máxima prioridad. Estamos comprometidos con brindar un servicio excepcional y productos de calidad que contribuyan al éxito y crecimiento de nuestros clientes. Agradecemos la confianza que nuestros clientes han depositado en nosotros durante todos estos años y esperamos continuar siendo su socio de confianza en el suministro de rodamientos, equipos de transmisión de potencia y productos para el mantenimiento en los años venideros.
                 </p>
                 <p class="text_nos">
-                  The standard chunk of Lorem Ipsum used since the 1500s is
-                  reproduced below for those interested. Sections 1.10.32 and
-                  1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are
-                  also reproduced in their exact original form, accompanied by
-                  English versions from the 1914 translation by H. Rackham.
+                  Durante más de tres décadas, hemos trabajado incansablemente para convertirnos en un referente en nuestra industria, brindando soluciones de calidad a empresas de todos los tamaños y sectores. Nuestra misión es simple pero poderosa: proporcionar a nuestros clientes la tranquilidad de saber que están trabajando con un socio de confianza.
                 </p>
               </div>
               <a
@@ -151,8 +143,7 @@
                     <p class="h2indez section-header text-center">MISIÓN</p>
                     <div class="rte-setting">
                       <p class="text_nos">
-                        Lorem impsum Lorem impsum Lorem impsum Lorem impsum
-                        Lorem impsum Lorem impsum Lorem impsum
+                        Proveer soluciones de alta calidad en rodamientos, equipos de transmisión de potencia y productos de mantenimiento, siendo el socio confiable de nuestros clientes. Nos destacamos por nuestra amplia variedad de productos y más de tres décadas de experiencia, siempre manteniendo la calidad como prioridad.
                       </p>
                     </div>
                   </li>
@@ -168,8 +159,7 @@
                     <p class="h2indez section-header text-center">VISIÓN</p>
                     <div class="rte-setting">
                       <p class="text_nos">
-                        Lorem impsum Lorem impsum Lorem impsum Lorem impsum
-                        Lorem impsum Lorem impsum Lorem impsum
+                        Ser líderes globales en la industria de rodamientos y equipos de transmisión de potencia, destacando por la innovación y la excelencia. Buscamos expandir nuestro alcance y fortalecer relaciones, siendo reconocidos por nuestra confiabilidad y compromiso con la satisfacción del cliente.
                       </p>
                     </div>
                   </li>
@@ -185,8 +175,7 @@
                     <p class="h2indez section-header text-center">OBJETIVO</p>
                     <div class="rte-setting">
                       <p class="text_nos">
-                        Lorem impsum Lorem impsum Lorem impsum Lorem impsum
-                        Lorem impsum Lorem impsum Lorem impsum
+                        Nuestro objetivo principal es adaptarnos a las necesidades cambiantes de los clientes mediante una amplia oferta de productos de calidad, relaciones sólidas con las mejores marcas, expansión global, satisfacción del cliente y sostenibilidad local.
                       </p>
                     </div>
                   </li>
@@ -466,15 +455,15 @@
                   <div class="row justify-content-center">
                     <div class="col-md-4">
                       <h2 class="counter" style="font-size: 50px; font-weight: 700;">0</h2>
-                      <p class="lead text_nos" style="color: white">Contador 1</p>
+                      <p class="lead text_nos" style="color: white">Productos</p>
                     </div>
                     <div class="col-md-4">
                       <h2 class="counter" style="font-size: 50px; font-weight: 700;">0</h2>
-                      <p class="lead text_nos" style="color: white">Contador 2</p>
+                      <p class="lead text_nos" style="color: white">Marcas</p>
                     </div>
                     <div class="col-md-4">
                       <h2 class="counter" style="font-size: 50px; font-weight: 700;">0</h2>
-                      <p class="lead text_nos" style="color: white">Contador 3</p>
+                      <p class="lead text_nos" style="color: white">Proveedores</p>
                     </div>
                   </div>
                 </div>
@@ -493,19 +482,19 @@
                     }
                   }, stepTime);
                 }
-
+            
                 window.addEventListener("DOMContentLoaded", function () {
                   var counters = document.querySelectorAll(".counter");
+                  var startValues = [0, 0, 0];
+                  var endValues = [8989, 227, 16];
+                  var durations = [3000, 1500, 800]; // Ajusta la duración para cada contador
+            
                   counters.forEach(function (counter, index) {
-                    var startValue = 0;
-                    var endValue = Math.pow(10, index + 1);
-                    var duration = 2000 + index * 500; // Ajustar la duración para cada contador
-
-                    animateValue(counter, startValue, endValue, duration);
+                    animateValue(counter, startValues[index], endValues[index], durations[index]);
                   });
                 });
               </script>
-            </div>
+            </div>            
           </div>
         </div>
         <!--End Parallax Section-->
